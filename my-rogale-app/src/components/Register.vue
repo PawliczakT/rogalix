@@ -33,7 +33,11 @@ export default {
           username: this.username,
           password: this.password,
         });
-        // Przekierowanie do logowania po pomyślnej rejestracji
+        // Zapisz token w stanie Vuex
+        this.$store.dispatch("setToken", response.data.token);
+        // Przekieruj do strony głównej lub innej strony po pomyślnym zalogowaniu
+        this.$router.push("/");
+
       } catch (error) {
         // Obsługa błędów
       }

@@ -21,6 +21,12 @@ class RegisterController(@Autowired private val userService: UserService, @Autow
         return userService.save(user)
     }
 
+//    @GetMapping
+//    fun getAllUsers(): List<User> = userService.findAll()
+
     @GetMapping
-    fun getAllUsers(): List<User> = userService.findAll()
+    fun getRegisterForm(): String {
+        // Return some data for the register form
+        return "Register form data"
+    }
 }

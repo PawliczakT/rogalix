@@ -7,16 +7,16 @@ import org.springframework.data.mongodb.core.mapping.Document
 @Document(collection = "users")
 data class User(
 
-        @Id
-        val id: Long,
+    @Id
+    val id: String,
 
-        val username: String,
+    val username: String,
 
-        val email: String,
+    val email: String,
 
-        var password: String,
+    var password: String,
 
-        @DBRef
-        val ratings: MutableList<Rating> = mutableListOf()
+    @DBRef
+    val ratings: MutableList<Rating> = mutableListOf()
 
 )
